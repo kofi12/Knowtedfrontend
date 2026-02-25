@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { Modal, ModalFooter } from './ui/Modal';
-import { Input } from './ui/input';
-import { Select } from './ui/select';
-import { Textarea } from './ui/textarea';
+import { Input } from './ui/InputField';
+import { Select } from './ui/SelectField';
+import { Textarea } from './ui/TextareaField';
 import { Button } from './ui/button';
 
 interface NewCourseModalProps {

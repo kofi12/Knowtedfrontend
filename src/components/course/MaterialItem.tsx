@@ -1,7 +1,7 @@
-import React from 'react';
-import { FileText, Video, FileCheck, Presentation } from 'lucide-react';
+import { useState } from 'react';
+import { FileText, Download, Eye, Trash2, MoreVertical } from 'lucide-react';
 import { Material } from '../../lib/mockData';
-import { Button } from '../ui/Button';
+import { Button } from '../ui/button';
 
 interface MaterialItemProps {
   material: Material;
@@ -11,9 +11,9 @@ interface MaterialItemProps {
 export function MaterialItem({ material, onView }: MaterialItemProps) {
   const materialIcons = {
     pdf: FileText,
-    video: Video,
-    doc: FileCheck,
-    slides: Presentation,
+    video: Download,
+    doc: Eye,
+    slides: Trash2,
   };
 
   const Icon = materialIcons[material.type];

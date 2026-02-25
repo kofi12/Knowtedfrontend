@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Sparkles, FileText, ListChecks, Lightbulb } from 'lucide-react';
 import { Modal, ModalFooter } from './ui/Modal';
-import { Input } from './ui/input';
+import { Input } from './ui/InputField';
 import { Button } from './ui/button';
 import { mockMaterials } from '../lib/mockData';
 
