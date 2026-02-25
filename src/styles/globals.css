@@ -1,8 +1,6 @@
 @import "tailwindcss";
 
-@source "./src";  /* or more specific: @source "./src/components" @source "./src/pages" */
-
-@theme {
+:root {
   /* Neutral palette */
   --color-background: 0 0% 100%;
   --color-foreground: 222.2 84% 4.9%;
