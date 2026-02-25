@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Modal, ModalFooter } from './ui/Modal';
-import { Input } from './ui/Input';
-import { Select } from './ui/Select';
-import { Textarea } from './ui/Textarea';
-import { Button } from './ui/Button';
+import { Input } from './ui/input';
+import { Select } from './ui/select';
+import { Textarea } from './ui/textarea';
+import { Button } from './ui/button';
 
 interface NewCourseModalProps {
   isOpen: boolean;

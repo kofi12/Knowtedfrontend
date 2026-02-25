@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import { FileText } from 'lucide-react';
-import { mockMaterials } from '../lib/mockData';
+import { useState } from 'react';
+import { Sparkles, FileText, ListChecks, Lightbulb } from 'lucide-react';
 import { Modal, ModalFooter } from './ui/Modal';
-import { Input } from './ui/Input';
-import { Button } from './ui/Button';
+import { Input } from './ui/input';
+import { Button } from './ui/button';
+import { mockMaterials } from '../lib/mockData';
 
 interface GenerateModalProps {
   isOpen: boolean;

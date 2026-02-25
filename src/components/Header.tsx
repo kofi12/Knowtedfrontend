@@ -1,6 +1,5 @@
-import React from 'react';
 import { Sparkles, ChevronRight, Plus, Menu, ArrowLeft } from 'lucide-react';
-import { Button } from './ui/Button';
+import { Button } from './ui/button';
 import { useNavigate } from 'react-router';
 
 interface HeaderProps {

@@ -1,8 +1,7 @@
-import React from 'react';
-import { FileText, BookOpen, Clock, Calendar } from 'lucide-react';
+import { Clock, FileText, CheckCircle2 } from 'lucide-react';
 import { Link } from 'react-router';
 import { Course } from '../lib/mockData';
-import { Progress } from './ui/Progress';
+import { Progress } from './ui/progress';
 
 interface CourseCardProps {
   course: Course;
@@ -34,16 +33,13 @@ export function CourseCard({ course }: CourseCardProps) {
         {/* Stats */}
         <div className="space-y-2 md:space-y-3 text-sm mb-4 md:mb-6 flex-1">
           <div className="flex items-start gap-2 md:gap-3">
-            <Calendar className="w-4 h-4 flex-shrink-0 mt-0.5" />
-            <span>{course.semester} {course.year}</span>
-          </div>
-          <div className="flex items-start gap-2 md:gap-3">
             <FileText className="w-4 h-4 flex-shrink-0 mt-0.5" />
             <span>{course.materialsCount} materials</span>
           </div>
           <div className="flex items-start gap-2 md:gap-3">
-            <BookOpen className="w-4 h-4 flex-shrink-0 mt-0.5" />
-            <span>{course.aidsCount} study aids</span>
+            <CheckCircle2 className="w-4 h-4 flex-shrink-0 mt-0.5" />
+            <span className="hidden sm:inline">Completed {course.completedCount} tasks</span>
+            <span className="sm:hidden">{course.completedCount} tasks</span>
           </div>
           <div className="flex items-start gap-2 md:gap-3">
             <Clock className="w-4 h-4 flex-shrink-0 mt-0.5" />

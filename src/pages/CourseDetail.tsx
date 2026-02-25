@@ -4,7 +4,7 @@ import { BookOpen, Brain, Calendar, ClipboardList } from 'lucide-react';
 import { mockCourses, mockMaterials, mockAids } from '../lib/mockData';
 import { GenerateModal } from '../components/GenerateModal';
 import { FlashcardViewer } from '../components/FlashcardViewer';
-import { Tabs } from '../components/ui/Tabs';
+import { Tabs } from '../components/ui/TabsWrapper';
 import { MaterialItem } from '../components/course/MaterialItem';
 import { AidCard } from '../components/course/AidCard';
 import { GenerateAidButton } from '../components/course/GenerateAidButton';
