@@ -47,7 +47,6 @@
           "recharts": "*",
           "sonner": "*",
           "tailwind-merge": "*",
-          "tailwindcss": "*",
           "vaul": "*",
           "vite": "*"
       },

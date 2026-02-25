@@ -121,23 +121,6 @@
     --default-mono-font-family: var(--font-mono);
     --default-mono-font-feature-settings: var(--font-mono--font-feature-settings);
     --default-mono-font-variation-settings: var(--font-mono--font-variation-settings);
-    --radius: .5rem;
-    --color-background: 0 0% 100%;
-    --color-foreground: 222.2 84% 4.9%;
-    --color-card: 0 0% 100%;
-    --color-primary: 221.2 83.2% 53.3%;
-    --color-primary-foreground: 210 40% 98%;
-    --color-secondary: 210 40% 96.1%;
-    --color-secondary-foreground: 222.2 47.4% 11.2%;
-    --color-muted: 210 40% 96.1%;
-    --color-muted-foreground: 215.4 16.3% 46.9%;
-    --color-accent: 174 62% 47%;
-    --color-accent-foreground: 210 40% 98%;
-    --color-destructive: 0 84.2% 60.2%;
-    --color-destructive-foreground: 210 40% 98%;
-    --color-border: 214.3 31.8% 91.4%;
-    --color-input: 214.3 31.8% 91.4%;
-    --color-ring: 221.2 83.2% 53.3%;
   }
 }
 
@@ -388,19 +371,87 @@
   }
 
   * {
-    border-color: var(--color-border);
-    outline-color: color-mix(in srgb, 221.2 83.2% 53.3% 50%, transparent);
-  }
-
-  @supports (color: color-mix(in lab, red, red)) {
-    * {
-      outline-color: color-mix(in oklab, var(--color-ring) 50%, transparent);
-    }
+    border-color: oklch(.922 0 0);
+    outline-color: color-mix(in oklab, oklch(.708 0 0) 50%, transparent);
   }
 
   body {
-    background-color: var(--color-background);
-    color: var(--color-foreground);
+    background-color: oklch(1 0 0);
+    color: oklch(.145 0 0);
+  }
+
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --input-background: 0 0% 100%;
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --accent: 174 62% 47%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --ring: 221.2 83.2% 53.3%;
+    --radius: .5rem;
+  }
+
+  [data-theme="dark"] {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 217.2 32.6% 17.5%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --input-background: 217.2 32.6% 17.5%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --accent: 174 62% 47%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+  }
+
+  * {
+    border-color: oklch(.922 0 0);
+  }
+
+  body {
+    background-color: oklch(1 0 0);
+    color: oklch(.145 0 0);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  }
+
+  h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.4;
   }
 }
 
@@ -845,7 +896,7 @@
   }
 
   .rounded {
-    border-radius: var(--radius);
+    border-radius: .25rem;
   }
 
   .rounded-full {
@@ -900,7 +951,7 @@
   }
 
   .border-border {
-    border-color: var(--color-border);
+    border-color: oklch(.922 0 0);
   }
 
   .border-indigo-500\/20 {
@@ -914,11 +965,11 @@
   }
 
   .border-input {
-    border-color: var(--color-input);
+    border-color: oklch(.922 0 0);
   }
 
   .border-primary {
-    border-color: var(--color-primary);
+    border-color: oklch(.205 0 0);
   }
 
   .border-purple-500\/20 {
@@ -942,11 +993,11 @@
   }
 
   .bg-accent {
-    background-color: var(--color-accent);
+    background-color: oklch(.97 0 0);
   }
 
   .bg-background {
-    background-color: var(--color-background);
+    background-color: oklch(1 0 0);
   }
 
   .bg-black\/50 {
@@ -964,11 +1015,11 @@
   }
 
   .bg-card {
-    background-color: var(--color-card);
+    background-color: oklch(1 0 0);
   }
 
   .bg-destructive {
-    background-color: var(--color-destructive);
+    background-color: oklch(.577 .245 27.325);
   }
 
   .bg-indigo-500 {
@@ -976,31 +1027,19 @@
   }
 
   .bg-muted {
-    background-color: var(--color-muted);
+    background-color: oklch(.97 0 0);
   }
 
   .bg-primary {
-    background-color: var(--color-primary);
+    background-color: oklch(.205 0 0);
   }
 
   .bg-primary\/10 {
-    background-color: color-mix(in srgb, 221.2 83.2% 53.3% 10%, transparent);
-  }
-
-  @supports (color: color-mix(in lab, red, red)) {
-    .bg-primary\/10 {
-      background-color: color-mix(in oklab, var(--color-primary) 10%, transparent);
-    }
+    background-color: color-mix(in oklab, oklch(.205 0 0) 10%, transparent);
   }
 
   .bg-primary\/20 {
-    background-color: color-mix(in srgb, 221.2 83.2% 53.3% 20%, transparent);
-  }
-
-  @supports (color: color-mix(in lab, red, red)) {
-    .bg-primary\/20 {
-      background-color: color-mix(in oklab, var(--color-primary) 20%, transparent);
-    }
+    background-color: color-mix(in oklab, oklch(.205 0 0) 20%, transparent);
   }
 
   .bg-purple-500 {
@@ -1008,7 +1047,7 @@
   }
 
   .bg-secondary {
-    background-color: var(--color-secondary);
+    background-color: oklch(.97 0 0);
   }
 
   .bg-teal-500 {
@@ -1030,7 +1069,7 @@
   }
 
   .from-background {
-    --tw-gradient-from: var(--color-background);
+    --tw-gradient-from: oklch(1 0 0);
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
   }
 
@@ -1122,7 +1161,7 @@
   }
 
   .to-muted {
-    --tw-gradient-to: var(--color-muted);
+    --tw-gradient-to: oklch(.97 0 0);
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
   }
 
@@ -1314,11 +1353,11 @@
   }
 
   .text-accent {
-    color: var(--color-accent);
+    color: oklch(.97 0 0);
   }
 
   .text-accent-foreground {
-    color: var(--color-accent-foreground);
+    color: oklch(.205 0 0);
   }
 
   .text-blue-500 {
@@ -1326,11 +1365,11 @@
   }
 
   .text-destructive-foreground {
-    color: var(--color-destructive-foreground);
+    color: oklch(.577 .245 27.325);
   }
 
   .text-foreground {
-    color: var(--color-foreground);
+    color: oklch(.145 0 0);
   }
 
   .text-indigo-500 {
@@ -1342,15 +1381,15 @@
   }
 
   .text-muted-foreground {
-    color: var(--color-muted-foreground);
+    color: oklch(.556 0 0);
   }
 
   .text-primary {
-    color: var(--color-primary);
+    color: oklch(.205 0 0);
   }
 
   .text-primary-foreground {
-    color: var(--color-primary-foreground);
+    color: oklch(.985 0 0);
   }
 
   .text-purple-500 {
@@ -1362,7 +1401,7 @@
   }
 
   .text-secondary-foreground {
-    color: var(--color-secondary-foreground);
+    color: oklch(.205 0 0);
   }
 
   .text-teal-500 {
@@ -1390,7 +1429,7 @@
   }
 
   .accent-primary {
-    accent-color: var(--color-primary);
+    accent-color: oklch(.205 0 0);
   }
 
   .opacity-0 {
@@ -1477,7 +1516,7 @@
 
   @media (hover: hover) {
     .group-hover\:text-primary:is(:where(.group):hover *) {
-      color: var(--color-primary);
+      color: oklch(.205 0 0);
     }
   }
 
@@ -1489,97 +1528,61 @@
 
   @media (hover: hover) {
     .hover\:border-primary\/50:hover {
-      border-color: color-mix(in srgb, 221.2 83.2% 53.3% 50%, transparent);
-    }
-
-    @supports (color: color-mix(in lab, red, red)) {
-      .hover\:border-primary\/50:hover {
-        border-color: color-mix(in oklab, var(--color-primary) 50%, transparent);
-      }
+      border-color: color-mix(in oklab, oklch(.205 0 0) 50%, transparent);
     }
   }
 
   @media (hover: hover) {
     .hover\:bg-accent:hover {
-      background-color: var(--color-accent);
+      background-color: oklch(.97 0 0);
     }
   }
 
   @media (hover: hover) {
     .hover\:bg-accent\/90:hover {
-      background-color: color-mix(in srgb, 174 62% 47% 90%, transparent);
-    }
-
-    @supports (color: color-mix(in lab, red, red)) {
-      .hover\:bg-accent\/90:hover {
-        background-color: color-mix(in oklab, var(--color-accent) 90%, transparent);
-      }
+      background-color: color-mix(in oklab, oklch(.97 0 0) 90%, transparent);
     }
   }
 
   @media (hover: hover) {
     .hover\:bg-destructive\/90:hover {
-      background-color: color-mix(in srgb, 0 84.2% 60.2% 90%, transparent);
-    }
-
-    @supports (color: color-mix(in lab, red, red)) {
-      .hover\:bg-destructive\/90:hover {
-        background-color: color-mix(in oklab, var(--color-destructive) 90%, transparent);
-      }
+      background-color: color-mix(in oklab, oklch(.577 .245 27.325) 90%, transparent);
     }
   }
 
   @media (hover: hover) {
     .hover\:bg-muted:hover {
-      background-color: var(--color-muted);
+      background-color: oklch(.97 0 0);
     }
   }
 
   @media (hover: hover) {
     .hover\:bg-muted\/80:hover {
-      background-color: color-mix(in srgb, 210 40% 96.1% 80%, transparent);
-    }
-
-    @supports (color: color-mix(in lab, red, red)) {
-      .hover\:bg-muted\/80:hover {
-        background-color: color-mix(in oklab, var(--color-muted) 80%, transparent);
-      }
+      background-color: color-mix(in oklab, oklch(.97 0 0) 80%, transparent);
     }
   }
 
   @media (hover: hover) {
     .hover\:bg-primary\/90:hover {
-      background-color: color-mix(in srgb, 221.2 83.2% 53.3% 90%, transparent);
-    }
-
-    @supports (color: color-mix(in lab, red, red)) {
-      .hover\:bg-primary\/90:hover {
-        background-color: color-mix(in oklab, var(--color-primary) 90%, transparent);
-      }
+      background-color: color-mix(in oklab, oklch(.205 0 0) 90%, transparent);
     }
   }
 
   @media (hover: hover) {
     .hover\:bg-secondary\/80:hover {
-      background-color: color-mix(in srgb, 210 40% 96.1% 80%, transparent);
-    }
-
-    @supports (color: color-mix(in lab, red, red)) {
-      .hover\:bg-secondary\/80:hover {
-        background-color: color-mix(in oklab, var(--color-secondary) 80%, transparent);
-      }
+      background-color: color-mix(in oklab, oklch(.97 0 0) 80%, transparent);
     }
   }
 
   @media (hover: hover) {
     .hover\:text-accent-foreground:hover {
-      color: var(--color-accent-foreground);
+      color: oklch(.205 0 0);
     }
   }
 
   @media (hover: hover) {
     .hover\:text-foreground:hover {
-      color: var(--color-foreground);
+      color: oklch(.145 0 0);
     }
   }
 
@@ -1601,7 +1604,7 @@
   }
 
   .focus\:border-primary:focus {
-    border-color: var(--color-primary);
+    border-color: oklch(.205 0 0);
   }
 
   .focus\:ring-2:focus {
@@ -1620,13 +1623,7 @@
   }
 
   .focus\:ring-primary\/20:focus {
-    --tw-ring-color: color-mix(in srgb, 221.2 83.2% 53.3% 20%, transparent);
-  }
-
-  @supports (color: color-mix(in lab, red, red)) {
-    .focus\:ring-primary\/20:focus {
-      --tw-ring-color: color-mix(in oklab, var(--color-primary) 20%, transparent);
-    }
+    --tw-ring-color: color-mix(in oklab, oklch(.205 0 0) 20%, transparent);
   }
 
   .focus\:outline-none:focus {
@@ -1640,7 +1637,7 @@
   }
 
   .focus-visible\:ring-ring:focus-visible {
-    --tw-ring-color: var(--color-ring);
+    --tw-ring-color: oklch(.708 0 0);
   }
 
   .focus-visible\:ring-offset-2:focus-visible {
@@ -1984,7 +1981,7 @@
 
   @media (prefers-color-scheme: dark) {
     .dark\:bg-card {
-      background-color: var(--color-card);
+      background-color: oklch(1 0 0);
     }
   }
 
@@ -2022,95 +2019,6 @@
   .\[\&_svg\]\:shrink-0 svg {
     flex-shrink: 0;
   }
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-background: 222.2 84% 4.9%;
-    --color-foreground: 210 40% 98%;
-    --color-card: 217.2 32.6% 17.5%;
-    --color-card-foreground: 210 40% 98%;
-    --color-popover: 222.2 84% 4.9%;
-    --color-popover-foreground: 210 40% 98%;
-    --color-muted: 217.2 32.6% 17.5%;
-    --color-muted-foreground: 215 20.2% 65.1%;
-    --color-border: 217.2 32.6% 17.5%;
-    --color-input: 217.2 32.6% 17.5%;
-    --color-primary: 217.2 91.2% 59.8%;
-    --color-primary-foreground: 222.2 47.4% 11.2%;
-    --color-secondary: 217.2 32.6% 17.5%;
-    --color-secondary-foreground: 210 40% 98%;
-    --color-accent: 174 62% 47%;
-    --color-accent-foreground: 222.2 47.4% 11.2%;
-  }
-}
-
-[data-theme="light"] {
-  --color-background: 0 0% 100%;
-  --color-foreground: 222.2 84% 4.9%;
-  --color-card: 0 0% 100%;
-  --color-card-foreground: 222.2 84% 4.9%;
-  --color-popover: 0 0% 100%;
-  --color-popover-foreground: 222.2 84% 4.9%;
-  --color-muted: 210 40% 96.1%;
-  --color-muted-foreground: 215.4 16.3% 46.9%;
-  --color-border: 214.3 31.8% 91.4%;
-  --color-input: 214.3 31.8% 91.4%;
-  --color-primary: 221.2 83.2% 53.3%;
-  --color-primary-foreground: 210 40% 98%;
-  --color-secondary: 210 40% 96.1%;
-  --color-secondary-foreground: 222.2 47.4% 11.2%;
-  --color-accent: 174 62% 47%;
-  --color-accent-foreground: 210 40% 98%;
-}
-
-[data-theme="dark"] {
-  --color-background: 222.2 84% 4.9%;
-  --color-foreground: 210 40% 98%;
-  --color-card: 217.2 32.6% 17.5%;
-  --color-card-foreground: 210 40% 98%;
-  --color-popover: 222.2 84% 4.9%;
-  --color-popover-foreground: 210 40% 98%;
-  --color-muted: 217.2 32.6% 17.5%;
-  --color-muted-foreground: 215 20.2% 65.1%;
-  --color-border: 217.2 32.6% 17.5%;
-  --color-input: 217.2 32.6% 17.5%;
-  --color-primary: 217.2 91.2% 59.8%;
-  --color-primary-foreground: 222.2 47.4% 11.2%;
-  --color-secondary: 217.2 32.6% 17.5%;
-  --color-secondary-foreground: 210 40% 98%;
-  --color-accent: 174 62% 47%;
-  --color-accent-foreground: 222.2 47.4% 11.2%;
-}
-
-* {
-  border-color: hsl(var(--color-border));
-}
-
-body {
-  background-color: hsl(var(--color-background));
-  color: hsl(var(--color-foreground));
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
-
-h1 {
-  font-size: 2rem;
-  font-weight: 700;
-  line-height: 1.2;
-}
-
-h2 {
-  font-size: 1.5rem;
-  font-weight: 600;
-  line-height: 1.3;
-}
-
-h3 {
-  font-size: 1.25rem;
-  font-weight: 600;
-  line-height: 1.4;
 }
 
 @property --tw-translate-x {
