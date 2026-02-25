@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@source "./src";  /* or more specific: @source "./src/components" @source "./src/pages" */
+
 @theme {
   /* Neutral palette */
   --color-background: 0 0% 100%;
@@ -13,7 +15,7 @@
   --color-border: 214.3 31.8% 91.4%;
   --color-input: 214.3 31.8% 91.4%;
   --color-input-background: 0 0% 100%;
-  
+
   /* Indigo/Teal accents */
   --color-primary: 221.2 83.2% 53.3%;
   --color-primary-foreground: 210 40% 98%;
@@ -21,12 +23,12 @@
   --color-secondary-foreground: 222.2 47.4% 11.2%;
   --color-accent: 174 62% 47%;
   --color-accent-foreground: 210 40% 98%;
-  
+
   --color-destructive: 0 84.2% 60.2%;
   --color-destructive-foreground: 210 40% 98%;
-  
+
   --color-ring: 221.2 83.2% 53.3%;
-  
+
   --radius: 0.5rem;
 }
 
@@ -44,7 +46,7 @@
     --color-border: 217.2 32.6% 17.5%;
     --color-input: 217.2 32.6% 17.5%;
     --color-input-background: 217.2 32.6% 17.5%;
-    
+
     --color-primary: 217.2 91.2% 59.8%;
     --color-primary-foreground: 222.2 47.4% 11.2%;
     --color-secondary: 217.2 32.6% 17.5%;
@@ -66,7 +68,7 @@
   --color-border: 214.3 31.8% 91.4%;
   --color-input: 214.3 31.8% 91.4%;
   --color-input-background: 0 0% 100%;
-  
+
   --color-primary: 221.2 83.2% 53.3%;
   --color-primary-foreground: 210 40% 98%;
   --color-secondary: 210 40% 96.1%;
@@ -87,7 +89,7 @@
   --color-border: 217.2 32.6% 17.5%;
   --color-input: 217.2 32.6% 17.5%;
   --color-input-background: 217.2 32.6% 17.5%;
-  
+
   --color-primary: 217.2 91.2% 59.8%;
   --color-primary-foreground: 222.2 47.4% 11.2%;
   --color-secondary: 217.2 32.6% 17.5%;
