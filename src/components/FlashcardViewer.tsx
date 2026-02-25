@@ -1,6 +1,6 @@
-import { X, ChevronLeft, ChevronRight, Check } from 'lucide-react';
-import { useState } from 'react';
-import { mockFlashcards, Flashcard } from '../lib/mockData';
+import { X, ChevronLeft, ChevronRight, Check } from "lucide-react";
+import { useState } from "react";
+import { mockFlashcards, Flashcard } from "../lib/mockData";
 
 interface FlashcardViewerProps {
   isOpen: boolean;
@@ -35,14 +35,14 @@ export function FlashcardViewer({ isOpen, onClose }: FlashcardViewerProps) {
   };
 
   const handleMarkKnown = () => {
-    setCards(prev =>
+    setCards((prev) =>
       prev.map((card, idx) =>
-        idx === currentIndex ? { ...card, known: !card.known } : card
-      )
+        idx === currentIndex ? { ...card, known: !card.known } : card,
+      ),
     );
   };
 
-  const knownCount = cards.filter(c => c.known).length;
+  const knownCount = cards.filter((c) => c.known).length;
 
   return (
     <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-2 md:p-4">
@@ -52,7 +52,8 @@ export function FlashcardViewer({ isOpen, onClose }: FlashcardViewerProps) {
           <div>
             <h2 className="text-lg md:text-xl font-semibold">Flashcards</h2>
             <p className="text-xs md:text-sm text-muted-foreground mt-1">
-              Card {currentIndex + 1} of {cards.length} • {knownCount} marked as known
+              Card {currentIndex + 1} of {cards.length} • {knownCount} marked as
+              known
             </p>
           </div>
           <button
@@ -72,23 +73,23 @@ export function FlashcardViewer({ isOpen, onClose }: FlashcardViewerProps) {
         </div>
 
         {/* Flashcard */}
-        <div className="relative" style={{ perspective: '1000px' }}>
+        <div className="relative" style={{ perspective: "1000px" }}>
           <div
-            className={`relative bg-gradient-to-br from-background to-muted border-2 border-border rounded-xl md:rounded-2xl shadow-lg transition-all duration-500 cursor-pointer`}
+            className={`relative bg-linear-to-br from-background to-muted border-2 border-border rounded-xl md:rounded-2xl shadow-lg transition-all duration-500 cursor-pointer`}
             style={{
-              minHeight: '280px',
-              transformStyle: 'preserve-3d',
-              transform: isFlipped ? 'rotateY(180deg)' : 'rotateY(0)',
+              minHeight: "280px",
+              transformStyle: "preserve-3d",
+              transform: isFlipped ? "rotateY(180deg)" : "rotateY(0)",
             }}
             onClick={handleFlip}
           >
             {/* Front */}
             <div
               className={`absolute inset-0 flex flex-col items-center justify-center p-6 md:p-8 rounded-xl md:rounded-2xl ${
-                isFlipped ? 'invisible' : 'visible'
+                isFlipped ? "invisible" : "visible"
               }`}
               style={{
-                backfaceVisibility: 'hidden',
+                backfaceVisibility: "hidden",
               }}
             >
               <div className="text-xs font-medium text-accent mb-3 md:mb-4 uppercase tracking-wide">
@@ -105,11 +106,11 @@ export function FlashcardViewer({ isOpen, onClose }: FlashcardViewerProps) {
             {/* Back */}
             <div
               className={`absolute inset-0 flex flex-col items-center justify-center p-6 md:p-8 rounded-xl md:rounded-2xl ${
-                isFlipped ? 'visible' : 'invisible'
+                isFlipped ? "visible" : "invisible"
               }`}
               style={{
-                backfaceVisibility: 'hidden',
-                transform: 'rotateY(180deg)',
+                backfaceVisibility: "hidden",
+                transform: "rotateY(180deg)",
               }}
             >
               <div className="text-xs font-medium text-primary mb-3 md:mb-4 uppercase tracking-wide">
@@ -152,12 +153,14 @@ export function FlashcardViewer({ isOpen, onClose }: FlashcardViewerProps) {
               onClick={handleMarkKnown}
               className={`flex-1 sm:flex-none flex items-center justify-center gap-2 px-3 md:px-4 py-2 rounded-lg transition-colors text-sm ${
                 currentCard.known
-                  ? 'bg-accent text-accent-foreground'
-                  : 'bg-secondary text-secondary-foreground hover:bg-secondary/80'
+                  ? "bg-accent text-accent-foreground"
+                  : "bg-secondary text-secondary-foreground hover:bg-secondary/80"
               }`}
             >
               <Check className="w-4 h-4" />
-              <span className="hidden sm:inline">{currentCard.known ? 'Known' : 'Mark Known'}</span>
+              <span className="hidden sm:inline">
+                {currentCard.known ? "Known" : "Mark Known"}
+              </span>
               <span className="sm:hidden">✓</span>
             </button>
           </div>
