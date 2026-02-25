@@ -2,10 +2,16 @@
 export default {
   content: [
     "./index.html",
-    "./App.tsx",
-    "./main.tsx",
-    "./components/**/*.{js,ts,jsx,tsx}",
-    "./pages/**/*.{js,ts,jsx,tsx}",
-    "./lib/**/*.{js,ts,jsx,tsx}",
+    "./src/**/*.{js,ts,jsx,tsx}",   // ← covers everything in src/
+    // Add more if needed, e.g.:
+    // "./src/pages/**/*.{js,ts,jsx,tsx}",
+    // "./src/components/**/*.{js,ts,jsx,tsx}",
   ],
+  theme: {
+    extend: {
+      // You can move some @theme variables here if you prefer JS config
+      // borderRadius: { DEFAULT: 'var(--radius)' },
+    },
+  },
+  plugins: [],
 };
