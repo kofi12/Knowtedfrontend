@@ -1,3 +1,4 @@
+import React from 'react';
 import { Sparkles, ChevronRight, Plus, Menu, ArrowLeft } from 'lucide-react';
 import { Button } from './ui/Button';
 import { useNavigate } from 'react-router';

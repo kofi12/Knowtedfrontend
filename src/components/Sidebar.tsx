@@ -1,6 +1,6 @@
+import React, { useState } from 'react';
 import { Home, Book, Plus, ChevronDown, ChevronRight, Moon, Sun, LogOut, User, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router';
-import { useState } from 'react';
 import { useTheme } from './ThemeProvider';
 import { mockCourses } from '../lib/mockData';
 

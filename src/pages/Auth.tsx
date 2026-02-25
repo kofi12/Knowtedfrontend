@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router';
 import { Button } from '../components/ui/Button';
 import { GraduationCap, Mail } from 'lucide-react';
