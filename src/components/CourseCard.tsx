@@ -1,3 +1,4 @@
+import React from 'react';
 import { FileText, BookOpen, Clock, Calendar } from 'lucide-react';
 import { Link } from 'react-router';
 import { Course } from '../lib/mockData';

@@ -1,5 +1,5 @@
+import React, { useState } from 'react';
 import { X, ChevronLeft, ChevronRight, Check } from 'lucide-react';
-import { useState } from 'react';
 import { mockFlashcards, Flashcard } from '../lib/mockData';
 
 interface FlashcardViewerProps {

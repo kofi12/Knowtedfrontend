@@ -1,5 +1,5 @@
+import React, { useState } from 'react';
 import { useParams } from 'react-router';
-import { useState } from 'react';
 import { BookOpen, Brain, Calendar, ClipboardList } from 'lucide-react';
 import { mockCourses, mockMaterials, mockAids } from '../lib/mockData';
 import { GenerateModal } from '../components/GenerateModal';

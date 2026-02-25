@@ -1,3 +1,4 @@
+import React from 'react';
 import { Plus } from 'lucide-react';
 import { CourseCard } from '../components/CourseCard';
 import { mockCourses } from '../lib/mockData';

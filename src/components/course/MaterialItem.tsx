@@ -1,3 +1,4 @@
+import React from 'react';
 import { FileText, Video, FileCheck, Presentation } from 'lucide-react';
 import { Material } from '../../lib/mockData';
 import { Button } from '../ui/Button';

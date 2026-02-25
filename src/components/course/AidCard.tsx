@@ -1,3 +1,4 @@
+import React from 'react';
 import { BookOpen, Brain, Calendar, ClipboardList, Play } from 'lucide-react';
 import { Aid } from '../../lib/mockData';
 
