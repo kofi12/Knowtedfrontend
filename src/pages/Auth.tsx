@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import { Button } from "../components/ui/button";
 import { GraduationCap, Mail } from "lucide-react";
@@ -10,6 +10,23 @@ export function Auth() {
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
   const [emailError, setEmailError] = useState("");
+
+  // Check for redirect back from backend after Google login
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const loggedIn = params.get("loggedIn");
+    const token = params.get("token"); // if you later return JWT
+
+    if (loggedIn === "true" || token) {
+      // Success! Store token if present, then go to dashboard
+      if (token) {
+        localStorage.setItem("token", token);
+        // Optional: set axios/fetch default header
+        // axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+      }
+      navigate("/dashboard", { replace: true });
+    }
+  }, [location.search, navigate]);
 
   const validateEmail = (email: string) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -23,27 +40,34 @@ export function Auth() {
       return;
     }
     setEmailError("");
-    // In a real app, check if user exists
-    // For demo, go to signup
     setMode("signup");
   };
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    // Mock login - in real app, authenticate
-    navigate("/");
+    // Mock or real login
+    navigate("/dashboard");
   };
 
   const handleSignup = (e: React.FormEvent) => {
     e.preventDefault();
-    // Mock signup - in real app, create account
-    navigate("/");
+    // Mock or real signup
+    navigate("/dashboard");
   };
 
   const handleSocialLogin = (provider: string) => {
     // Mock social login
     console.log(`Login with ${provider}`);
     navigate("/");
+  };
+
+  const handleGoogleLogin = () => {
+    // Backend URL — use env var in production
+    const backendUrl =
+      import.meta.env.VITE_BACKEND_URL || "http://localhost:8080";
+
+    // Trigger Google SSO flow
+    window.location.href = `${backendUrl}/oauth2/authorization/google`;
   };
 
   return (
@@ -118,7 +142,7 @@ export function Auth() {
 
               <div className="flex justify-center gap-3">
                 <button
-                  onClick={() => handleSocialLogin("Google")}
+                  onClick={() => handleGoogleLogin()}
                   className="w-12 h-12 flex items-center justify-center border border-border rounded-lg hover:bg-muted transition-colors"
                   title="Continue with Google"
                 >
