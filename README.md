@@ -8,4 +8,10 @@
   Run `npm i` to install the dependencies.
 
   Run `npm run dev` to start the development server.
-  
+
+
+  ## Deployment
+
+  Frontend is deployed on Vercel and can be accessed at
+
+  https://knowtedfrontend-oimw.vercel.app/
